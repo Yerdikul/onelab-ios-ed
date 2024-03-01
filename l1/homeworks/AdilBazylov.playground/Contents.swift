@@ -3,6 +3,32 @@ import Cocoa
 var greeting = "Hello, playground"
 
 struct Stack<Element> {
+    
+    private var items: [Element]
+    
+    var size: Int {
+        items.count
+    }
+    
+    var isEmpty: Bool {
+        items.isEmpty
+    }
+    
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    
+    mutating func pop() -> Element? {
+        return items.isEmpty ? nil : items.removeLast()
+    }
+    
+    func peek() -> Element? {
+        return items.isEmpty ? nil : items[items.count - 1]
+    }
+    
+    init() {
+        self.items = []
+    }
 //Инициализация: Класс должен иметь инициализатор, который создаёт пустой стек.
 //push: Метод для добавления элемента в вершину стека.
 //pop: Метод для удаления и возвращения элемента с вершины стека. Если стек пуст, метод должен возвращать nil.
@@ -29,3 +55,13 @@ struct LinkedList {
 
 
 }
+
+var stack = Stack<Int>()
+stack.isEmpty
+stack.size
+stack.push(1)
+stack.push(2)
+print(stack.peek() ?? "Стек пуст") // Должно напечатать "2"
+print(stack.pop() ?? "Стек пуст")   // Должно напечатать "2"
+print(stack.pop() ?? "Стек пуст")   // Должно напечатать "1"
+print(stack.pop() ?? "Стек пуст")   // Должно напечатать "Стек пуст"
