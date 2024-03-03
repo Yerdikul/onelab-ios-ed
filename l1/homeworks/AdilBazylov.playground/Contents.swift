@@ -32,6 +32,7 @@ struct Stack<Element> {
 }
 
 struct Queue<Element> {
+    
     private var items: [Element]
     
     var size: Int {
@@ -59,12 +60,6 @@ struct Queue<Element> {
     }
 }
 
-struct LinkedList {
-//prepend: Метод для добавления нового элемента в начало списка.
-//append: Метод для добавления нового элемента в конец списка.
-//remove: Метод для удаления элемента из списка. Можно реализовать удаление по значению или по индексу.
-//find: метод для поиска элемента в списке по его значению, Метод возвращает первый узел, содержащий указанное значение, или nil, если такой узел не найден
-//printList: Метод для печати всех значений узлов списка. Этот метод проходит по всем узлам и печатает их значения.
 class Node<Element> {
     
     var item: Element
@@ -89,11 +84,8 @@ struct LinkedList<Element> where Element: Equatable {
     }
     
     mutating func prepend(_ item: Element) {
-        print("tail0 is \(String(describing: tail?.item)) and head is \(String(describing: head?.item))")
         head = Node(item: item, next: head)
-        print("tail is \(String(describing: tail?.item)) and head is \(String(describing: head?.item))")
         tail = tail ?? head
-        print("tail2 is \(String(describing: tail?.item)) and head is \(String(describing: head?.item))")
         size += 1
     }
     
@@ -118,12 +110,9 @@ struct LinkedList<Element> where Element: Equatable {
         }
         var current = head
         var numberOfJumps = index - 1
-        print("what \(numberOfJumps)")
+        
         while numberOfJumps > 0 {
-            
-            print("numberOfJumps is \(numberOfJumps)")
             current = current?.next
-            print(current?.item)
             numberOfJumps -= 1
         }
         
@@ -152,7 +141,7 @@ struct LinkedList<Element> where Element: Equatable {
         
         while current != nil {
             guard let next = current?.next?.item else {
-                print("no such value in the list")
+                print("No such value in the list")
                 return
             }
             if next == value {
