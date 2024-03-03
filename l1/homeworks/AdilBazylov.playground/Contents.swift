@@ -1,7 +1,3 @@
-import Cocoa
-
-var greeting = "Hello, playground"
-
 struct Stack<Element> {
     
     private var items: [Element]
@@ -118,7 +114,6 @@ struct LinkedList<Element> where Element: Equatable {
         
         current?.next = current?.next?.next
         size -= 1
-        printList()
         
         func removeZeroIndex() {
             head = head?.next
@@ -158,13 +153,22 @@ struct LinkedList<Element> where Element: Equatable {
         }
     }
     
+    func find(by item: Element) -> Node<Element>? {
+        var current = head
+        while let node = current {
+            guard node.item != item else {
+                return node
+            }
+            current = node.next
+        }
+        return nil
+    }
+    
     func printList() {
         print(self)
     }
     
     init() {}
-    
-
 }
 
 // MARK: - Extensions
@@ -187,6 +191,9 @@ extension Node: CustomStringConvertible {
     }
 }
 
+
+// MARK: - Testing
+
 var list = LinkedList<Int>()
 list.prepend(1)
 print(list)
@@ -199,8 +206,9 @@ list.prepend(6)
 
 list.printList()
 list.removeByIndex(1)
-list.removeByValue(5)
+list.removeByValue(1)
 list.printList()
+list.find(by: 12)
 
 print(list)
 
