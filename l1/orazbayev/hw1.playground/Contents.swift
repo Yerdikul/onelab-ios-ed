@@ -77,18 +77,75 @@ print(queue.dequeue() ?? "Очередь пуста") // Должно напеч
 print(queue.dequeue() ?? "Очередь пуста") // Должно напечатать "Второй"
 print(queue.dequeue() ?? "Очередь пуста") // Должно напечатать "Очередь пуста"
 
-//// LinkedList
-//Реализуйте структуру данных LinkedList. Связный список должен состоять из узлов, каждый из которых содержит значение и ссылку на следующий узел в списке.
-//
-//prepend: Метод для добавления нового элемента в начало списка.
-//append: Метод для добавления нового элемента в конец списка.
-//remove: Метод для удаления элемента из списка. Можно реализовать удаление по значению или по индексу.
-//find: метод для поиска элемента в списке по его значению, Метод возвращает первый узел, содержащий указанное значение, или nil, если такой узел не найден
-//printList: Метод для печати всех значений узлов списка. Этот метод проходит по всем узлам и печатает их значения.
-//
-//
-//let list = LinkedList<Int>()
-//list.append(value: 1) // Добавление в конец
-//list.prepend(value: 0) // Добавление в начало
-//list.append(value: 2) // Добавление в конец
-//print(list)
+// LinkedList
+class Node<T> {
+    var value: T
+    var next: Node?
+    
+    init(value: T) {
+        self.value = value
+    }
+}
+
+class LinkedList<T: Equatable> {
+    private var head: Node<T>?
+    
+    func prepend(value: T) {
+        let newNode = Node(value: value)
+        newNode.next = head
+        head = newNode
+    }
+    
+    func append(value: T) {
+        let newNode = Node(value: value)
+        if head == nil {
+            head = newNode
+            return
+        }
+        var current = head
+        while current?.next != nil {
+            current = current?.next
+        }
+        current?.next = newNode
+    }
+    
+    func remove(value: T) {
+        if head?.value == value {
+            head = head?.next
+            return
+        }
+        var current = head
+        var prev: Node<T>?
+        while current != nil && current?.value != value {
+            prev = current
+            current = current?.next
+        }
+        prev?.next = current?.next
+    }
+    
+    func find(value: T) -> Node<T>? {
+        var current = head
+        while current != nil && current?.value != value {
+            current = current?.next
+        }
+        return current
+    }
+    
+    func printList() {
+        var current = head
+        while current != nil {
+            print(current!.value, terminator: " ")
+            current = current?.next
+        }
+        print()
+    }
+}
+
+// Пример использования
+let list = LinkedList<Int>()
+list.append(value: 1)
+list.prepend(value: 0)
+list.append(value: 2)
+list.printList() // Должно напечатать "0 1 2 "
+
+
