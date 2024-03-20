@@ -1,0 +1,49 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  lane :build_and_notify do
+    # Build the project
+    gym(
+      project: "/Users/nurbolmuhametzan/Desktop/homeworks/l2/homeworks/Nurbol/one.lab.2.1/one.lab.2.1.xcodeproj", # Make sure this path is correct
+      scheme: "Dev", 
+      clean: true,
+      export_method: "development"
+    )
+
+
+    increment_build_number(
+      xcodeproj: "/Users/nurbolmuhametzan/Desktop/homeworks/l2/homeworks/Nurbol/one.lab.2.1/one.lab.2.1.xcodeproj" 
+    )
+
+    version = get_version_number(
+      xcodeproj: "/Users/nurbolmuhametzan/Desktop/homeworks/l2/homeworks/Nurbol/one.lab.2.1/one.lab.2.1.xcodeproj" 
+    )
+    build_number = get_build_number(
+      xcodeproj: "/Users/nurbolmuhametzan/Desktop/homeworks/l2/homeworks/Nurbol/one.lab.2.1/one.lab.2.1.xcodeproj" 
+    )
+
+    message = "Project successfully built! Version: #{version}, Build Number: #{build_number}"
+
+   telegram(
+      text: message,
+      chat_id: "-1002040699809",
+      token: "6989831459:AAG62xOap0qSLYzZV30HDV2_N_FmtdtP43M"
+    )
+
+  end
+end
