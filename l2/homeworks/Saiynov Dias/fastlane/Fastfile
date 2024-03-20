@@ -1,0 +1,47 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Build on dev scheme and send notification"
+  lane :build_and_notify do
+    version = get_version_number(xcodeproj: "one.lab.2.1.xcodeproj")
+    
+    # increment_version_number(bump_type: "patch")
+    increment_version_number(
+      version_number: "#{version.to_i + 1}",  # Increment the version number
+      xcodeproj: "one.lab.2.1.xcodeproj"
+    )
+    increment_build_number
+
+    gym(
+      scheme: "one.lab.2.1-dev",
+      clean: true,
+      output_directory: "build",
+      output_name: "OneLab Saiynov Dias.ipa",
+      export_options: {
+        method: "development"
+      }
+      # export_method: "development"
+    )
+
+    telegram(
+      token: "7186359908:AAE5Yf_x_BeXbGjYBtPaHXgwrIH7P0sDpME",
+      chat_id: "-1002076780677",
+      text: "iOS build successful! Build number: #{lane_context[SharedValues::BUILD_NUMBER]}, Bundle version: #{lane_context[SharedValues::VERSION_NUMBER]}"
+    )
+  end
+end
