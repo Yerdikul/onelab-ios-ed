@@ -21,7 +21,7 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane ios build_and_notify
 ```
 
-Build on dev scheme and send notification
+
 
 ----
 
