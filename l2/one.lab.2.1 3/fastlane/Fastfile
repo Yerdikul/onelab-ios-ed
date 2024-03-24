@@ -17,7 +17,27 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :telegram_lane do
+  
+  gym(scheme: "one.lab.2.1-dev")
+  
+  increment_build_number
+  increment_version_number
+
+  version = get_version_number
+  build = get_build_number
+
+#setup telegram
+  
+  chatid = "637547703"
+  message = "Homework 2/ Adil. Build number: #{build}, version: #{version}"
+  token = "7054628755:AAFoTTzvgpjlUWvAgcf0_qHrF57Ew3YuzkI"
+
+    telegram(
+        text: message,
+        chat_id: chatid,
+        token: token
+        )
+    
   end
 end
