@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 final class CoreDataStore {
     private let delegate = UIApplication.shared.delegate as? AppDelegate

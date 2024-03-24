@@ -7,20 +7,6 @@
 
 import UIKit
 
-class Parent {
-    var child: Child?
-    deinit {
-        print("Parent deinitialized")
-    }
-}
-
-class Child {
-    var parent: Parent?
-    deinit {
-        print("Child deinitialized")
-    }
-}
-
 class CustomUIAlertController: UIAlertController {
     override func loadView() {
         super.loadView()
@@ -57,14 +43,6 @@ class ViewController: UIViewController {
         }
         controller.addAction(action)
         present(controller, animated: true)
-        doMemoryLeak()
-    }
-    
-    func doMemoryLeak() {
-        let parent = Parent()
-        let child = Child()
-        parent.child = child
-        child.parent = parent
     }
 }
 

@@ -13,9 +13,12 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var countLabel: UILabel!
     
     @IBAction func minusButttonPressed(_ sender: UIButton) {
+        guard let currentValue = countLabel.text, let intValue = Int(currentValue) else {return}
+        countLabel.text = String(intValue - 1)
     }
     @IBAction func plusButtonPressed(_ sender: Any) {
-    }
+        guard let currentValue = countLabel.text, let intValue = Int(currentValue) else {return}
+        countLabel.text = String(intValue + 1)    }
     
     
     override func awakeFromNib() {
