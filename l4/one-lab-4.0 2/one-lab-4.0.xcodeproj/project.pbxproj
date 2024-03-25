@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		946A1B5B2B9D7A17000E5669 /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5A2B9D7A17000E5669 /* KeyValueStorage.swift */; };
 		946A1B5D2B9D84FC000E5669 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5C2B9D84FC000E5669 /* CoreDataStore.swift */; };
-		946A1B5F2B9D87F9000E5669 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5E2B9D87F9000E5669 /* User+CoreDataClass.swift */; };
+		946A1B5F2B9D87F9000E5669 /* User+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5E2B9D87F9000E5669 /* User+Realm.swift */; };
 		94E10EBC2BA6A218000B0111 /* one_lab_4_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E10EBB2BA6A218000B0111 /* one_lab_4_0Tests.swift */; };
 		94E10EC52BA6A273000B0111 /* UserDefaultsStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E10EC42BA6A273000B0111 /* UserDefaultsStorageTest.swift */; };
 		9F628ED72B9D022400C68C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F628ED62B9D022400C68C5D /* AppDelegate.swift */; };
@@ -20,7 +20,6 @@
 		9F628EE32B9D022600C68C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F628EE22B9D022600C68C5D /* Assets.xcassets */; };
 		9F628EE62B9D022600C68C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F628EE42B9D022600C68C5D /* LaunchScreen.storyboard */; };
 		9F628EF02B9D479700C68C5D /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F628EEF2B9D479700C68C5D /* UserTableViewCell.swift */; };
-		9F628EF42B9D553400C68C5D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F628EF22B9D553400C68C5D /* User+CoreDataProperties.swift */; };
 		FA0EA9552BB0A5B40023BF41 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FA0EA9542BB0A5B40023BF41 /* Realm */; };
 		FA0EA9572BB0A5B40023BF41 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA0EA9562BB0A5B40023BF41 /* RealmSwift */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,7 @@
 /* Begin PBXFileReference section */
 		946A1B5A2B9D7A17000E5669 /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		946A1B5C2B9D84FC000E5669 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
-		946A1B5E2B9D87F9000E5669 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		946A1B5E2B9D87F9000E5669 /* User+Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Realm.swift"; sourceTree = "<group>"; };
 		946A1B602B9D8D26000E5669 /* one_lab_4.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = one_lab_4.2.xcdatamodel; sourceTree = "<group>"; };
 		94E10EB92BA6A218000B0111 /* one-lab-4.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "one-lab-4.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E10EBB2BA6A218000B0111 /* one_lab_4_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = one_lab_4_0Tests.swift; sourceTree = "<group>"; };
@@ -53,7 +52,6 @@
 		9F628EE52B9D022600C68C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F628EE72B9D022600C68C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F628EEF2B9D479700C68C5D /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		9F628EF22B9D553400C68C5D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +86,7 @@
 		9F628ECA2B9D022400C68C5D = {
 			isa = PBXGroup;
 			children = (
-				946A1B5E2B9D87F9000E5669 /* User+CoreDataClass.swift */,
-				9F628EF22B9D553400C68C5D /* User+CoreDataProperties.swift */,
+				946A1B5E2B9D87F9000E5669 /* User+Realm.swift */,
 				9F628ED52B9D022400C68C5D /* one-lab-4.0 */,
 				94E10EBA2BA6A218000B0111 /* one-lab-4.0Tests */,
 				9F628ED42B9D022400C68C5D /* Products */,
@@ -242,10 +239,9 @@
 			files = (
 				9F628EDB2B9D022400C68C5D /* ViewController.swift in Sources */,
 				9F628ED72B9D022400C68C5D /* AppDelegate.swift in Sources */,
-				9F628EF42B9D553400C68C5D /* User+CoreDataProperties.swift in Sources */,
 				9F628EE12B9D022400C68C5D /* one_lab_4_0.xcdatamodeld in Sources */,
 				9F628ED92B9D022400C68C5D /* SceneDelegate.swift in Sources */,
-				946A1B5F2B9D87F9000E5669 /* User+CoreDataClass.swift in Sources */,
+				946A1B5F2B9D87F9000E5669 /* User+Realm.swift in Sources */,
 				9F628EF02B9D479700C68C5D /* UserTableViewCell.swift in Sources */,
 				946A1B5D2B9D84FC000E5669 /* CoreDataStore.swift in Sources */,
 				946A1B5B2B9D7A17000E5669 /* KeyValueStorage.swift in Sources */,
