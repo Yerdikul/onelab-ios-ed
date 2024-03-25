@@ -1,0 +1,43 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :telegram_lane do
+  
+  gym(scheme: "one.lab.2.1-dev")
+  
+  increment_build_number
+  increment_version_number
+
+  version = get_version_number
+  build = get_build_number
+
+#setup telegram
+  
+  chatid = "637547703"
+  message = "Homework 2/ Adil. Build number: #{build}, version: #{version}"
+  token = "7054628755:AAFoTTzvgpjlUWvAgcf0_qHrF57Ew3YuzkI"
+
+    telegram(
+        text: message,
+        chat_id: chatid,
+        token: token
+        )
+    
+  end
+end
