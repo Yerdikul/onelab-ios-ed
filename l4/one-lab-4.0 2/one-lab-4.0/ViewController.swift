@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         controller.addTextField()
         let action = UIAlertAction(title: "Сохранить", style: .default) { _ in
             let name = controller.textFields?.first?.text
-            CoreDataStore().save(id: UUID(), name: name ?? "", count: 0)
+            RealmStore().save(name: name ?? "", count: 0)
             self.updateUsers()
         }
         controller.addAction(action)
@@ -67,6 +67,6 @@ extension ViewController: UITableViewDelegate {
 
 private extension ViewController {
     func updateUsers() {
-        users = CoreDataStore().fetchAllUsers()
+        users = RealmStore().fetchAllUsers()
     }
 }

@@ -10,12 +10,15 @@ import Foundation
 import RealmSwift
 
 public class User: Object {
+    @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted public var count: Int32
-    @Persisted public var id: UUID?
     @Persisted public var firstName: String?
     @Persisted public var lastName: String?
-}
-
-extension User : Identifiable {
-
+    
+    convenience init(name: String, count: Int32) {
+        self.init()
+        self.firstName = name
+        self.lastName = name
+        self.count = count
+    }
 }

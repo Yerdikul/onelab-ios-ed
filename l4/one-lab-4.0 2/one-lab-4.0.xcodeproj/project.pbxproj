@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		946A1B5B2B9D7A17000E5669 /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5A2B9D7A17000E5669 /* KeyValueStorage.swift */; };
-		946A1B5D2B9D84FC000E5669 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5C2B9D84FC000E5669 /* CoreDataStore.swift */; };
+		946A1B5D2B9D84FC000E5669 /* RealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5C2B9D84FC000E5669 /* RealmStore.swift */; };
 		946A1B5F2B9D87F9000E5669 /* User+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A1B5E2B9D87F9000E5669 /* User+Realm.swift */; };
 		94E10EBC2BA6A218000B0111 /* one_lab_4_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E10EBB2BA6A218000B0111 /* one_lab_4_0Tests.swift */; };
 		94E10EC52BA6A273000B0111 /* UserDefaultsStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E10EC42BA6A273000B0111 /* UserDefaultsStorageTest.swift */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		946A1B5A2B9D7A17000E5669 /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
-		946A1B5C2B9D84FC000E5669 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		946A1B5C2B9D84FC000E5669 /* RealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStore.swift; sourceTree = "<group>"; };
 		946A1B5E2B9D87F9000E5669 /* User+Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Realm.swift"; sourceTree = "<group>"; };
 		946A1B602B9D8D26000E5669 /* one_lab_4.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = one_lab_4.2.xcdatamodel; sourceTree = "<group>"; };
 		94E10EB92BA6A218000B0111 /* one-lab-4.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "one-lab-4.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +105,7 @@
 		9F628ED52B9D022400C68C5D /* one-lab-4.0 */ = {
 			isa = PBXGroup;
 			children = (
-				946A1B5C2B9D84FC000E5669 /* CoreDataStore.swift */,
+				946A1B5C2B9D84FC000E5669 /* RealmStore.swift */,
 				9F628ED62B9D022400C68C5D /* AppDelegate.swift */,
 				9F628ED82B9D022400C68C5D /* SceneDelegate.swift */,
 				9F628EDA2B9D022400C68C5D /* ViewController.swift */,
@@ -243,7 +243,7 @@
 				9F628ED92B9D022400C68C5D /* SceneDelegate.swift in Sources */,
 				946A1B5F2B9D87F9000E5669 /* User+Realm.swift in Sources */,
 				9F628EF02B9D479700C68C5D /* UserTableViewCell.swift in Sources */,
-				946A1B5D2B9D84FC000E5669 /* CoreDataStore.swift in Sources */,
+				946A1B5D2B9D84FC000E5669 /* RealmStore.swift in Sources */,
 				946A1B5B2B9D7A17000E5669 /* KeyValueStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

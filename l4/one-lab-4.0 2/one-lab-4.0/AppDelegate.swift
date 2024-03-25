@@ -43,13 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     // MARK: - Realm
-    lazy var realm: Realm = {
+    lazy var realm: Realm? = {
         do {
-            lazy var realm = try Realm()
+            var realm = try Realm()
+            return realm
         } catch {
-            print("error")
+            print("Error initializing Realm: \(error)")
+            fatalError("Failed to initialize Realm: \(error)")
         }
-        return realm
     }()
     
     
